@@ -1,12 +1,4 @@
-<a [routerLink]="['/dashBoard',{outlets:{'hexa':['employshow']}}]">Show Employ</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['/dashBoard',{outlets:{'hexa':['employsearch']}}]">Search Employ</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['/dashBoard',{outlets:{'hexa':['addemploy']}}]">Add Employ</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['/dashBoard',{outlets:{'hexa':['deleteemploy']}}]">Delete Employ</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a [routerLink]="['/dashBoard',{outlets:{'hexa':['updateemploy']}}]">Update Employ</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a [routerLink]="['/empdashboard', {outlets: {'hex': ['updateemploy']}}]">Update Employ</a>
 <hr/>
-<router-outlet name="hexa"></router-outlet>
+<router-outlet name="hex"></router-outlet>

@@ -10,6 +10,10 @@ export class EmployService {
 
   constructor(private _http : HttpClient) { }
 
+  validate(user : string, pwd : string) : Observable<any> {
+    return this._http.get("http://localhost:8185/api/login1/"+user+"/"+pwd);
+  }
+
   login(user : string, pwd : string) : Observable<any> {
     return this._http.get("http://localhost:8185/api/login/"+user+"/"+pwd);
   }

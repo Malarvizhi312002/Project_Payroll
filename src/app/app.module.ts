@@ -14,20 +14,30 @@ import { EmployUpdateComponent } from './employ-update/employ-update.component';
 import { EmployDashBoardComponent } from './employ-dash-board/employ-dash-board.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
+import { EmployLoginComponent } from './employ-login/employ-login.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
-const routes : Routes =
-[
-  {path:'',component:AdminLoginComponent},
-  {path:'dashBoard',component:EmployDashBoardComponent},
-  {path:'dashBoard',component:EmployDashBoardComponent,children: [
-    {path:'employshow',component:EmployShowComponent, outlet:'hexa'},
-    {path:'employsearch',component:EmploySearchComponent,outlet:'hexa'},
-    {path:'addemploy',component:EmployInsertComponent,outlet:'hexa'},
-    {path:'deleteemploy',component:EmployDeleteComponent,outlet:'hexa'},
-    {path:'updateemploy',component:EmployUpdateComponent,outlet:'hexa'},
-
-  ]},
-]
+const routes: Routes = [
+  { path: '', component: MenuComponent },
+  { path: 'adminlogin', component: AdminLoginComponent },
+  { path: 'employlogin', component: EmployLoginComponent },
+  { 
+    path: 'dashBoard', 
+    component: AdminDashboardComponent,
+    children: [
+      { path: 'employshow', component: EmployShowComponent, outlet: 'hexa' },
+      { path: 'employsearch', component: EmploySearchComponent, outlet: 'hexa' },
+      { path: 'addemploy', component: EmployInsertComponent, outlet: 'hexa' },
+      { path: 'deleteemploy', component: EmployDeleteComponent, outlet: 'hexa' },
+      { path: 'updateemploy', component: EmployUpdateComponent, outlet: 'hexa' }
+    ]
+  },
+  { path: 'empdashboard', component: EmployDashBoardComponent, 
+    children: [
+      { path: 'updateemploy', component: EmployUpdateComponent, outlet: 'hex' }
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
@@ -39,7 +49,9 @@ const routes : Routes =
     EmployDeleteComponent,
     EmployUpdateComponent,
     EmployDashBoardComponent,
-    MenuComponent
+    MenuComponent,
+    EmployLoginComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

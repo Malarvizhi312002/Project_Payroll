@@ -13,6 +13,18 @@
     <div *ngIf="name.invalid && employForm.submitted && isValid==false">
         <p style="color: red;">Please Enter Employ Name...</p>
     </div><br/>
+    User Name : 
+    <input type="text" name="username" required
+     [(ngModel)]="employ.username" #username="ngModel" /> <br/><br/>
+     <div *ngIf="username.invalid && employForm.submitted && isValid==false">
+         <p style="color: red;">Please Enter User Name...</p>
+     </div><br/>
+     Password : 
+     <input type="password" name="password" required
+      [(ngModel)]="employ.password" #password="ngModel" /> <br/><br/>
+      <div *ngIf="password.invalid && employForm.submitted && isValid==false">
+          <p style="color: red;">Please Enter Password...</p>
+      </div><br/>
     Gender : 
     <input type="text" name="gender" required
     [(ngModel)]="employ.gender" #gender="ngModel" /> <br/><br/>
@@ -50,9 +62,9 @@
         <p style="color: red;">Please Enter Salary</p>
     </div> <br/>
     Leave Available : 
-    <input type="text" name="leaveAvail" required
-    [(ngModel)]="employ.leaveAvail" #leaveAvail="ngModel" /> <br/><br/>
-    <div *ngIf="leaveAvail.invalid && employForm.submitted && isValid==false">
+    <input type="text" name="leaveAvailable" required
+    [(ngModel)]="employ.leaveAvailable" #leaveAvailable="ngModel" /> <br/><br/>
+    <div *ngIf="leaveAvailable.invalid && employForm.submitted && isValid==false">
         <p style="color: red;">Please Enter Leave available...</p>
     </div> <br/>
     <input type="submit" value="Add" />
