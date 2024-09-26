@@ -1,0 +1,59 @@
+<p>employ-update works!</p>
+
+<form #employForm="ngForm" (ngSubmit)="add(employForm)">
+    Employ No :
+    <input type="number" name="empno" required
+        [(ngModel)]="employ.empno" #empno="ngModel" /> <br/><br/>
+        <div *ngIf="empno.invalid && employForm.submitted && isValid==false">
+            <p style="color: red;">Please Enter Employ No...</p>
+        </div> <br/>
+   Employ Name : 
+   <input type="text" name="name" required
+    [(ngModel)]="employ.name" #name="ngModel" /> <br/><br/>
+    <div *ngIf="name.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Employ Name...</p>
+    </div><br/>
+    Gender : 
+    <input type="text" name="gender" required
+    [(ngModel)]="employ.gender" #gender="ngModel" /> <br/><br/>
+    <div *ngIf="gender.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Gender...</p>
+    </div> <br/>
+    Department : 
+    <input type="text" name="dept" required
+    [(ngModel)]="employ.dept" #dept="ngModel" /> <br/><br/>
+    <div *ngIf="dept.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Department</p>
+    </div>
+    Designation : 
+    <input type="text" name="desig" required
+    [(ngModel)]="employ.desig" #desig="ngModel" /> <br/><br/>
+    <div *ngIf="desig.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Designation</p>
+    </div> <br/>
+    Date Of Birth : 
+    <input type="date" name="dateOfBirth" required
+    [(ngModel)]="employ.dateOfBirth" #dateOfBirth="ngModel" /> <br/><br/>
+    <div *ngIf="dateOfBirth.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Date Of Birth...</p>
+    </div> <br/>
+    Date Of Join : 
+    <input type="date" name="dateOfJoin" required
+    [(ngModel)]="employ.dateOfJoin" #dateOfJoin="ngModel" /> <br/><br/>
+    <div *ngIf="dateOfJoin.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Date Of Join...</p>
+    </div> <br/>
+    Salary : 
+    <input type="number" name="salary" required
+    [(ngModel)]="employ.salary" #salary="ngModel" /> <br/><br/>
+    <div *ngIf="salary.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Salary</p>
+    </div> <br/>
+    Leave Available : 
+    <input type="text" name="leaveAvail" required
+    [(ngModel)]="employ.leaveAvail" #leaveAvail="ngModel" /> <br/><br/>
+    <div *ngIf="leaveAvail.invalid && employForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Leave available...</p>
+    </div> <br/>
+    <input type="submit" value="Add" />
+</form>

@@ -1,0 +1,17 @@
+<p>admin-login works!</p>
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    User Name :
+    <input type="text" name="username" required
+        [(ngModel)]="admin.Username" #username="ngModel" /> <br/><br/>
+        <div *ngIf="username.invalid && loginForm.submitted && isValid==false">
+            <p style="color: red;">Please Enter UserName....</p>
+        </div> <br/>
+   Password : 
+   <input type="password" name="password" required
+    [(ngModel)]="admin.Password" #password="ngModel" /> <br/><br/>
+    <div *ngIf="password.invalid && loginForm.submitted && isValid==false">
+        <p style="color: red;">Please Enter Password...</p>
+    </div><br/>
+
+<input type="submit" value="Login" />
+</form>
